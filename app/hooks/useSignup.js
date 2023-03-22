@@ -1,5 +1,7 @@
 "use client";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
+// Custom Hooks
 import { useAuthContext } from "../hooks/useAuthContext";
 
 // Firebase Imports
@@ -11,6 +13,8 @@ export const useSignup = () => {
   const [loading, setLoading] = useState(false);
   const { dispatch } = useAuthContext();
 
+  const router = useRouter();
+
   const signup = (email, password) => {
     setError(null);
     setLoading(true);
@@ -18,6 +22,7 @@ export const useSignup = () => {
       .then((res) => {
         dispatch({ type: "LOGIN", payload: res.user });
         setLoading(false);
+        router.push("/dashboard");
       })
       .catch((err) => {
         setError(err.message);
