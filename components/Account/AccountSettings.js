@@ -227,7 +227,9 @@ const AccountSettings = ({ showAccountSettings, setShowAccountSettings }) => {
                           <div>
                             <div className="flex items-center">
                               {user.photoURL ? (
-                                <img
+                                <Image
+                                  width={48}
+                                  height={48}
                                   className="inline-block w-12 h-12 rounded-full"
                                   src={user.photoURL}
                                   alt="profile"

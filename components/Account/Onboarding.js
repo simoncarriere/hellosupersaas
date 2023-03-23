@@ -54,7 +54,7 @@ export default function Onboarding() {
                   </Dialog.Title>
                   <div className="mt-2">
                     <p className="text-sm text-gray-500">
-                      Welcome to Saasy! We're excited to have you on board.
+                      Welcome to Saasy! We&apos;re excited to have you on board.
                     </p>
                   </div>
                 </div>
@@ -65,7 +65,7 @@ export default function Onboarding() {
                   onClick={() => setOpenModal(false)}
                   className="inline-flex justify-center w-full px-4 py-2 text-base font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
                 >
-                  I'm Ready
+                  I&apos;m Ready
                 </button>
               </div>
             </div>
