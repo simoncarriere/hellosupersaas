@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useRouter } from "next/navigation";
 // Custom Hooks
 import { useAuthContext } from "./useAuthContext";
 
@@ -9,8 +8,6 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 
 export const useLogin = () => {
   const { dispatch } = useAuthContext();
-  // Handle Redirect
-  const router = useRouter();
   // Form Handling
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -21,10 +18,9 @@ export const useLogin = () => {
       .then((res) => {
         dispatch({ type: "LOGIN", payload: res.user });
         setLoading(false);
-        router.push("/dashboard");
       })
       .catch((err) => {
-        setError(err.message);
+        setError("Failed to log in. Wrong email or password.");
         setLoading(false);
       });
   };

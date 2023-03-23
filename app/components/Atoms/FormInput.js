@@ -2,11 +2,11 @@ const FormInput = ({ label, errormessage, onChange, id, ...inputProps }) => {
   return (
     <div>
       <input
-        className="peer input-field "
+        className="my-2 peer input-field"
         {...inputProps}
         onChange={onChange}
       />
-      <p className="hidden text-sm text-red-600 peer-invalid:block peer-invalid:mb-6 peer-invalid:mt-3 ">
+      <p className="hidden my-2 text-xs text-red-600 peer-invalid:block">
         {errormessage}
       </p>
     </div>
@@ -14,3 +14,9 @@ const FormInput = ({ label, errormessage, onChange, id, ...inputProps }) => {
 };
 
 export default FormInput;
+
+{
+  /* <label htmlFor="email" className="sr-only">
+                          Email
+                        </label> */
+}

@@ -1,5 +1,5 @@
 "use client";
-import { useLogout } from "../hooks/useLogout";
+import { useLogout } from "../../hooks/useLogout";
 
 const Logout = () => {
   const { logout } = useLogout();

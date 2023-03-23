@@ -1,32 +1,34 @@
 import { Fragment } from "react";
+import Image from "next/image";
+// Lib
 import { Menu, Transition } from "@headlessui/react";
-// import { SunIcon, MoonIcon } from '@heroicons/react/outline'
-import Link from "next/link";
+// Hooks
+import { useLogout } from "../../hooks/useLogout";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-// Backup Icon
-// {darkMode ? (
-//     <MoonIcon className="w-6 h-6"/>
-//     ) : (
-//     <SunIcon className="w-6 h-6"/>
-// )}
-
-export default function Settings({ logout, user, toggleDarkMode, darkMode }) {
+export default function UserDropdown({
+  user,
+  showAccountSettings,
+  setShowAccountSettings,
+}) {
+  const { logout } = useLogout();
   return (
     <Menu as="div" className="relative inline-block text-left">
       {/* Profile Picture */}
       <Menu.Button>
         {user.photoURL ? (
-          <img
-            className="inline-block w-12 h-12 rounded-full "
+          <Image
+            className="inline-block w-12 h-12 duration-200 border-2 border-blue-300 rounded-full transition-color hover:border-blue-600"
             src={user.photoURL}
             alt="profile"
+            width={100}
+            height={100}
           />
         ) : (
-          <span className="inline-block w-12 h-12 overflow-hidden rounded-full bg-slate-100">
+          <span className="inline-block w-12 h-12 overflow-hidden duration-200 border-2 border-blue-300 rounded-full bg-slate-100 p-0.5 transition-color hover:border-blue-600">
             <svg
               className="w-full h-full text-gray-300 "
               fill="currentColor"
@@ -56,31 +58,17 @@ export default function Settings({ logout, user, toggleDarkMode, darkMode }) {
               {user.email ? user.email : user.displayName}
             </p>
           </div>
-          {/* Appearence (Light/Day) */}
-          <div className="block px-4 py-3 ">
-            <span className="sr-only">Set Theme</span>
-            <p
-              onClick={toggleDarkMode}
-              className="flex text-sm text-gray-700 cursor-pointer "
-            >
-              Appearence
-              {darkMode ? " (dark)" : " (light)"}
-            </p>
-          </div>
+
           <div className="py-1">
             {/* Account Settings */}
             <Menu.Item>
-              {({ active }) => (
-                <Link
-                  href="/account-settings"
-                  className={classNames(
-                    active ? "bg-gray-100 text-gray-900  " : "text-gray-700 ",
-                    "block px-4 py-3 text-sm"
-                  )}
-                >
-                  Account Settings
-                </Link>
-              )}
+              <div
+                href="/account-settings"
+                className="block px-4 py-3 text-sm text-gray-900 cursor-pointer hover:bg-gray-100 hovrer:text-gray-700"
+                onClick={() => setShowAccountSettings(true)}
+              >
+                Account Settings
+              </div>
             </Menu.Item>
             {/* Support */}
             <Menu.Item>
