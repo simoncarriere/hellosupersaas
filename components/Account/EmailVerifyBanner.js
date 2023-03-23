@@ -13,7 +13,7 @@ const EmailVerifyBanner = ({ user }) => {
       });
   };
   return (
-    <div className="p-3 mb-4 rounded-md bg-blue-50">
+    <div className="p-3 mb-2 rounded-md bg-blue-50">
       <div className="flex items-center justify-between text-blue-500">
         <div className="flex gap-2">
           <EnvelopeIcon className="w-5 h-5 " aria-hidden="true" />

@@ -11,6 +11,9 @@ import { deleteUser, updatePassword } from "firebase/auth";
 import FormInput from "../Atoms/FormInput";
 import Success from "../Atoms/SuccessAlert";
 import Error from "../Atoms/ErrorAlert";
+import EmailVerifyBanner from "./EmailVerifyBanner";
+// Icons
+import { CheckCircleIcon } from "@heroicons/react/24/solid";
 
 const AccountSettings = ({ showAccountSettings, setShowAccountSettings }) => {
   const { user, dispatch } = useAuthContext();
@@ -168,6 +171,29 @@ const AccountSettings = ({ showAccountSettings, setShowAccountSettings }) => {
                         </p>
                       </div>
                       <div>
+                        <div className="py-6 border-t border-gray-200">
+                          <label htmlFor="photo" className="mb-4 label">
+                            Email Verification
+                          </label>
+                          {user.providerData[0].providerId === "password" &&
+                          user.emailVerified === false ? (
+                            <EmailVerifyBanner />
+                          ) : (
+                            <div className="p-3 mb-2 rounded-md bg-green-50">
+                              <div className="flex items-center justify-between text-green-600">
+                                <div className="flex gap-2">
+                                  <CheckCircleIcon
+                                    className="w-5 h-5 "
+                                    aria-hidden="true"
+                                  />
+                                  <p className="text-sm ">
+                                    Your Email has been verified
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          )}
+                        </div>
                         {/* Password Reset */}
                         {user.providerData[0].providerId === "password" && (
                           <form
