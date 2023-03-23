@@ -1,5 +1,6 @@
 "use client";
 import { useState, Fragment } from "react";
+import Image from "next/image";
 // Lib
 import { Dialog, Transition } from "@headlessui/react";
 // Hooks

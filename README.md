@@ -1,38 +1,16 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# The Collection
 
-## Getting Started
+Auth-SPA is part of a larger collection of boilerplates built using Next13, Firebase9 & Tailwind. Other external services will be specifified in the title or description of the individual boilerplate.
 
-First, run the development server:
+### Disclaimers
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+- I tried to offer a balance between unopionated styling and a good starting point
+- Every boilerplate denormalizes user datat into its own firebase collection on signup.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### The Boilerplates
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+1. Auth-SPA : Authentication for Single Page App using Email and/or Social Providers
+2. Auth-Multipage (Coming Soon)
+3. Auth-Subscription : Subscription Site biolerpalte, tracking subscribed / unsubscribed users on firebase.
+4. Auth-Products (Coming Soon)
+5. Auth-AccessControlledRooms :
