@@ -3,9 +3,9 @@ import { useState } from "react";
 import Image from "next/image";
 import { Inter } from "next/font/google";
 // Hooks
-import { useAuthContext } from "./hooks/useAuthContext";
+import { useAuthContext } from "../hooks/useAuthContext";
 // Components
-import Onboarding from "./components/Account/Onboarding";
+import Onboarding from "../components/Account/Onboarding";
 
 const inter = Inter({ subsets: ["latin"] });
 

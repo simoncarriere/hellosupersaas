@@ -1,10 +1,10 @@
 // "use client";
 
 import "./globals.css";
-import { AuthContextProvider } from "./context/AuthContext";
+import { AuthContextProvider } from "../context/AuthContext";
 
 // Componetns
-import Nav from "./components/Nav";
+import Nav from "../components/Nav";
 
 export const metadata = {
   title: "Create Next App",
