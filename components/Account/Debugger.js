@@ -1,6 +1,6 @@
 const Debugger = ({ user }) => {
   return (
-    <div className="flex flex-col gap-2 p-6 border border-gray-300 rounded-md">
+    <div className="flex flex-col gap-2 p-6 border rounded-md bg-slate-50 broder-slate-100">
       <h2>Debugger</h2>
       <p>displayName: {user.displayName}</p>
       <p>Email : {user.email}</p>
