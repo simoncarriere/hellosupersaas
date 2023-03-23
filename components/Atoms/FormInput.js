@@ -14,9 +14,3 @@ const FormInput = ({ label, errormessage, onChange, id, ...inputProps }) => {
 };
 
 export default FormInput;
-
-{
-  /* <label htmlFor="email" className="sr-only">
-                          Email
-                        </label> */
-}

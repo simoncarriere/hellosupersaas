@@ -8,7 +8,7 @@ import { useLogin } from "../../hooks/useLogin";
 import { useSocialAuth } from "../../hooks/useSocialAuth";
 // Components
 import SocialLogins from "./SocialLogins";
-import FormInput from "../atoms/FormInput";
+import FormInput from "../Atoms/FormInput";
 //Icons
 import { XCircleIcon } from "@heroicons/react/24/solid";
 
