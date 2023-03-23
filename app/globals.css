@@ -28,7 +28,7 @@
     @apply cursor-pointer inline-block bg-slate-700 py-3 px-6 border border-transparent rounded-md text-base font-semibold tracking-wide text-white hover:bg-blue-800;
   }
   .btn-blue {
-    @apply cursor-pointer inline-block bg-blue-100 py-3 px-6 border border-transparent rounded-md text-base font-semibold tracking-wide text-blue-700 hover:bg-blue-50;
+    @apply cursor-pointer inline-block bg-blue-100 py-3 px-4 border border-transparent rounded-md text-base font-semibold tracking-wide text-blue-700 hover:bg-blue-50;
   }
   .btn-social-login {
     @apply cursor-pointer w-full inline-flex justify-center py-2 px-4 border border-slate-100  rounded-md shadow-sm bg-slate-50  text-sm font-medium text-slate-500  hover:bg-slate-100;

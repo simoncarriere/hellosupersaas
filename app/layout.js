@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
       <AuthContextProvider>
         <body>
           <Nav />
-          <main className="bg-slate-50">{children}</main>
+          <main>{children}</main>
         </body>
       </AuthContextProvider>
     </html>
