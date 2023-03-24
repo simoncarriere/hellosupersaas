@@ -1,6 +1,6 @@
 # Auth-SPA
 
-Auth-SPA is part of a larger collection of boilerplates built using Next13, Firebase9 & Tailwind.
+Auth-SPA is part of a larger collection of boilerplates built using Next13, Firebase9 & Tailwind. Access them [here](https://github.com/simoncarriere/boilerplates)
 
 ### Disclaimers
 
@@ -15,9 +15,11 @@ Auth-SPA is part of a larger collection of boilerplates built using Next13, Fire
 4. Auth-Products (Coming Soon)
 5. Auth-AccessControlledRooms :
 
+---
+
 ### QuickStart
 
-1. Initialize Firebase in your console, create project and copy your project data into '.env.local'
+1. Initialize Firebase in your console, create project and copy your project data into `.env.local`
 
 ```
 NEXT_PUBLIC_FIREBASE_API_KEY=
