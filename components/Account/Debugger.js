@@ -23,7 +23,9 @@ const Debugger = ({ user }) => {
           <p>UID: {currentUser.uid}</p>
           <p>Email: {currentUser.email}</p>
           <p>displayName: {currentUser.displayName}</p>
-          <p>photoURL: {currentUser.photoURL}</p>
+          <p>
+            photoURL: {currentUser.photoURL ? currentUser.photoURL : "null"}
+          </p>
         </>
       )}
     </div>
