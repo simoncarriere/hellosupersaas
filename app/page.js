@@ -1,4 +1,5 @@
 "use client";
+import { useState, useEffect } from "react";
 import { Inter } from "next/font/google";
 // Hooks
 import { useAuthContext } from "../hooks/useAuthContext";
@@ -11,8 +12,6 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   const { user, authIsReady } = useAuthContext();
-
-  console.log(user);
 
   return (
     authIsReady && (

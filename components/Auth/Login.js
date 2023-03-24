@@ -1,6 +1,5 @@
 "use client";
 import { useState, useRef, Fragment } from "react";
-import Link from "next/link";
 // Lib
 import { Dialog, Transition } from "@headlessui/react";
 // Hooks
@@ -56,7 +55,7 @@ const Login = ({ btnText, setShowForgetPassword }) => {
     }
   };
 
-  //   // Social Signup
+  // Social Signup
   const { socialSignup, googleProvider, githubProvider, twitterProvider } =
     useSocialAuth();
   const handleSocialAuth = (provider) => {
@@ -67,7 +66,7 @@ const Login = ({ btnText, setShowForgetPassword }) => {
     setShowForgetPassword(true);
     setShowModal(false);
   };
-  console.log(values.errorMessage);
+
   return (
     <>
       <div
