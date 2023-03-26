@@ -32,9 +32,17 @@ NEXT_PUBLIC_FIREBASE_APP_ID=
 NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID=
 ```
 
-2. In your Firebase console, active Firebase Auth with the following providers : Email/Password, Google, Twitter, Github. Then, initialize your firebase firestore instance.
+2. From Stripe (tutorial coming soon)
 
-3. Run your app locally, `npm i` then `npm run dev`
+```
+NEXT_PUBLIC_STRIPE_PRODUCTPRICE=
+NEXT_PUBLIC_STRIPE_PUBLICKEY=
+NEXT_PUBLIC_STRIPE_RESTRICTED_KEY=
+```
+
+3. In your Firebase console, active Firebase Auth with the following providers : Email/Password, Google, Twitter, Github. Then, initialize your firebase firestore instance.
+
+4. Run your app locally, `npm i` then `npm run dev`
 
 ### Hooks Explained
 
@@ -43,5 +51,6 @@ NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID=
 - `useLogin` : Login a user with email and password, invoke login function from firebase and persit to local state
 - `useLogout` : Invoke logout function from firebase and persit to local state
 - `useSocialAuth` : Create or Login a user through using Social Authentication and persit status to local state
+- `usePremiumCheck` : Checks if the user has an active stripe subscription by checking its user document.
 - `useCollection`
 - `useDocument`
