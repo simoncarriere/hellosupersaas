@@ -5,8 +5,8 @@ import { AuthContextProvider } from "../context/AuthContext";
 import Nav from "../components/Nav";
 
 export const metadata = {
-  title: "Auth SPA",
-  description: "A simple SPA with authentication",
+  title: "Paywall Subscription",
+  description: "A simple Paywall Subscription with authentication",
 };
 
 export default function RootLayout({ children }) {

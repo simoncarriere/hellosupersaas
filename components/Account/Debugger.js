@@ -1,7 +1,11 @@
+// Hooks
+import { useAuthContext } from "../../hooks/useAuthContext";
 import { useDocument } from "../../hooks/useDocument";
 
 const Debugger = ({ user }) => {
   const { document: currentUser } = useDocument("users", user.uid);
+  const { userIsPremium } = useAuthContext();
+  console.log(userIsPremium);
 
   return (
     <div className="flex flex-col gap-2 p-6 border rounded-md bg-slate-50 broder-slate-100">
@@ -11,7 +15,9 @@ const Debugger = ({ user }) => {
       <p>Email : {user.email}</p>
       <p>UID : {user.uid}</p>
       <p>Verified : {user.emailVerified ? "True" : "False"}</p>
-      <p>photoURL: {user.photoURL ? user.photoURL.slice(0, 100) : "N/A"}</p>
+      <p>
+        photoURL: {user.photoURL ? user.photoURL.slice(0, 100) + "..." : "N/A"}
+      </p>
       <p>Creation Time: {user.metadata.creationTime}</p>
       <p>Login Time: {user.metadata.lastSignInTime}</p>
       <p>AuthProvider: {user.providerData[0].providerId}</p>
@@ -24,8 +30,14 @@ const Debugger = ({ user }) => {
           <p>Email: {currentUser.email}</p>
           <p>displayName: {currentUser.displayName}</p>
           <p>
-            photoURL: {currentUser.photoURL ? currentUser.photoURL : "null"}
+            photoURL:{" "}
+            {currentUser.photoURL
+              ? currentUser.photoURL.slice(0, 100) + "..."
+              : "null"}
           </p>
+          <p>stripeId: {currentUser.stripeId}</p>
+          <p>stripeLink: {currentUser.stripeLink}</p>
+          <p>userIsPremium: {userIsPremium && userIsPremium.toString()}</p>
         </>
       )}
     </div>

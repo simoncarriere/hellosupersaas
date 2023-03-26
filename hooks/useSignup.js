@@ -26,6 +26,7 @@ export const useSignup = () => {
             uid: res.user.uid,
             email: res.user.email,
             displayName: displayName,
+            joinDate: new Date().toISOString(),
           });
         } catch (err) {
           console.error(err.message);

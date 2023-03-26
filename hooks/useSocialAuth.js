@@ -34,21 +34,21 @@ export const useSocialAuth = () => {
         // Denormalize user email & uuid with custom doc id of uuid
         try {
           let ref = collection(db, "users");
-          setDoc(doc(ref, res.user.uid), {
-            uid: res.user.uid,
-            email: res.user.email,
-            displayName: res.user.displayName,
-            photoURL: res.user.photoURL,
-          });
+          setDoc(
+            doc(ref, res.user.uid),
+            {
+              uid: res.user.uid,
+              email: res.user.email,
+              displayName: res.user.displayName,
+              photoURL: res.user.photoURL,
+            },
+            { merge: true }
+          );
         } catch (err) {
           console.error(err.message);
         }
         dispatch({ type: "LOGIN", payload: res.user });
       });
-
-      // .then(() => {
-      //   console.log("after social router");
-      // });
 
       //  // Get the user's ID token as it is needed to exchange for a session cookie.
       //  const credential = provider.credentialFromResult(res);
