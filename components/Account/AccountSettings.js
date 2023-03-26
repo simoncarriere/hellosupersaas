@@ -16,7 +16,7 @@ import EmailVerifyBanner from "./EmailVerifyBanner";
 import { CheckCircleIcon } from "@heroicons/react/24/solid";
 
 const AccountSettings = ({ showAccountSettings, setShowAccountSettings }) => {
-  const { user, dispatch } = useAuthContext();
+  const { user, dispatch, userIsPremium } = useAuthContext();
   // Password Reset State
   const [passwordValues, setPasswordValues] = useState({
     password: "",
@@ -119,13 +119,32 @@ const AccountSettings = ({ showAccountSettings, setShowAccountSettings }) => {
       });
   };
 
-  // ❌ TODO :
+  // ❌ TODO : Upload or Update User Photo
   const updatePhoto = () => {
     // 1. Check if file is jpeg or gif and is bellow size restriction
     // 2. Update photo on firebase bucket
     // 3. Match photo to user id
     // 4. Manage errors & display success message
     console.log("Photo Successfully Updated");
+  };
+
+  // ✅ Open User's customer portal (When user already has a subscription)
+  const sendToCustomerPortal = async () => {
+    const functions = getFunctions();
+    const createPortalLink = httpsCallable(
+      functions,
+      "ext-firestore-stripe-payments-createPortalLink"
+    );
+    try {
+      createPortalLink({ returnUrl: window.location.origin })
+        .then((result) => {
+          const data = result.data;
+          window.location.assign(data.url);
+        })
+        .catch((err) => console.log(err));
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   return (
@@ -194,6 +213,22 @@ const AccountSettings = ({ showAccountSettings, setShowAccountSettings }) => {
                             </div>
                           )}
                         </div>
+                        {userIsPremium && (
+                          <div className="py-6 border-t border-gray-200 ">
+                            <label>Manage your subscription</label>
+
+                            <p className="my-2 text-sm text-gray-700">
+                              Your payment is made through Stripe, manage your
+                              subscription through your portal.
+                            </p>
+                            <button
+                              onClick={sendToCustomerPortal}
+                              className="btn-outline"
+                            >
+                              Access Customer Portal
+                            </button>
+                          </div>
+                        )}
                         {/* Password Reset */}
                         {user.providerData[0].providerId === "password" && (
                           <form

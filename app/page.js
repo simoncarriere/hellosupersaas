@@ -3,15 +3,24 @@ import { useState, useEffect } from "react";
 import { Inter } from "next/font/google";
 // Hooks
 import { useAuthContext } from "../hooks/useAuthContext";
+import { userPremiumCheck } from "../hooks/usePremiumCheck";
 // Components
 import Onboarding from "../components/Account/Onboarding";
 import Debugger from "../components/Account/Debugger";
 import EmailVerifyBanner from "../components/Account/EmailVerifyBanner";
+import PremiumContent from "../components/PremiumContent";
+import FreemiumContent from "../components/FreemiumContent";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
-  const { user, authIsReady } = useAuthContext();
+  const { user, authIsReady, userIsPremium } = useAuthContext();
+  const { checkForPremium } = userPremiumCheck();
+
+  // Check if user is Premium
+  useEffect(() => {
+    checkForPremium();
+  }, [user]);
 
   return (
     authIsReady && (
@@ -25,6 +34,7 @@ export default function Home() {
                   <EmailVerifyBanner user={user} />
                 )}
 
+              {userIsPremium ? <PremiumContent /> : <FreemiumContent />}
               {/* Debugger displays useful user data you have access to */}
               <Debugger user={user} />
 

@@ -11,7 +11,7 @@ export const authReducer = (state, action) => {
     case "LOGIN":
       return { ...state, user: action.payload };
     case "LOGOUT":
-      return { ...state, user: null };
+      return { ...state, user: null, userIsPremium: false };
     case "SET_USER_IS_PREMIUM":
       return { ...state, userIsPremium: true };
     case "AUTH_IS_READY":

@@ -5,7 +5,6 @@ import { useDocument } from "../../hooks/useDocument";
 const Debugger = ({ user }) => {
   const { document: currentUser } = useDocument("users", user.uid);
   const { userIsPremium } = useAuthContext();
-  console.log(userIsPremium);
 
   return (
     <div className="flex flex-col gap-2 p-6 border rounded-md bg-slate-50 broder-slate-100">
@@ -36,8 +35,8 @@ const Debugger = ({ user }) => {
               : "null"}
           </p>
           <p>stripeId: {currentUser.stripeId}</p>
-          <p>stripeLink: {currentUser.stripeLink}</p>
-          <p>userIsPremium: {userIsPremium && userIsPremium.toString()}</p>
+          <p>User's stripeLink: {currentUser.stripeLink}</p>
+          <p>userIsPremium: {userIsPremium ? "True" : "False"}</p>
         </>
       )}
     </div>

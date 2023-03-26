@@ -1,5 +1,3 @@
-import { useState, useEffect } from "react";
-
 // Firebase
 import { db } from "../../lib/firebase";
 import {
@@ -52,7 +50,7 @@ const SendToCheckout = ({ user }) => {
     }
   };
   return (
-    <button className="btn-outline" onClick={sendToCheckout}>
+    <button className="bg-white btn-outline" onClick={sendToCheckout}>
       SendToCheckout
     </button>
   );
