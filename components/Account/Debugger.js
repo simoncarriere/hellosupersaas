@@ -35,7 +35,7 @@ const Debugger = ({ user }) => {
               : "null"}
           </p>
           <p>stripeId: {currentUser.stripeId}</p>
-          <p>User`&apos;`s stripeLink: {currentUser.stripeLink}</p>
+          <p>User&apos;s stripeLink: {currentUser.stripeLink}</p>
           <p>userIsPremium: {userIsPremium ? "True" : "False"}</p>
         </>
       )}
