@@ -20,7 +20,7 @@ export default function Home() {
   // Check if user is Premium
   useEffect(() => {
     checkForPremium();
-  }, [user]);
+  }, [user, checkForPremium]);
 
   return (
     authIsReady && (
