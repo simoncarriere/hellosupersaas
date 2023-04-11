@@ -21,7 +21,7 @@ export default function UserDropdown({
       <Menu.Button>
         {user.photoURL ? (
           <Image
-            className="inline-block w-12 h-12 duration-200 border-2 border-blue-300 rounded-full transition-color hover:border-blue-600"
+            className="inline-block w-12 h-12 duration-200 border-2 rounded-full border-slate-100 transition-color hover:border-orange-200"
             src={user.photoURL}
             alt="profile"
             width={100}

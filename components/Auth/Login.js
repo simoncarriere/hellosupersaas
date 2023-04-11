@@ -71,7 +71,7 @@ const Login = ({ btnText, setShowForgetPassword }) => {
     <>
       <div
         onClick={() => setShowModal(true)}
-        className="px-6 py-3 text-base font-semibold tracking-wide border rounded-md shadow-sm cursor-pointer text-slate-700 border-slate-200 hover:bg-gray-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+        className="px-6 py-3 text-base font-semibold tracking-wide bg-white border rounded-md shadow-sm cursor-pointer text-slate-700 border-slate-200 hover:bg-gray-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-600"
       >
         {btnText}
       </div>
@@ -79,7 +79,7 @@ const Login = ({ btnText, setShowForgetPassword }) => {
         <Transition.Root show={showModal} as={Fragment}>
           <Dialog
             as="div"
-            className="relative z-10"
+            className="relative z-20 isolate"
             initialFocus={emailRef}
             onClose={() => setShowModal(false)}
           >
@@ -106,14 +106,14 @@ const Login = ({ btnText, setShowForgetPassword }) => {
                   leaveFrom="opacity-100 translate-y-0 sm:scale-100"
                   leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
                 >
-                  <Dialog.Panel className="w-full max-w-lg bg-white rounded-lg">
+                  <Dialog.Panel className="w-full max-w-2xl bg-white rounded-lg">
                     <form
                       autoComplete="off"
-                      className="flex flex-col p-6"
+                      className="flex flex-col p-8"
                       onSubmit={handleEmailAuth}
                     >
                       <Dialog.Title as="h1" className="mb-4 text-2xl">
-                        Log in
+                        Let's get you back in!
                       </Dialog.Title>
                       {/* Social Logins */}
                       <SocialLogins
@@ -199,7 +199,7 @@ const Login = ({ btnText, setShowForgetPassword }) => {
                       </div>
                       <p
                         onClick={() => toggleForgetPassword()}
-                        className="mt-2 text-sm text-gray-500 cursor-pointer hover:text-gray-700"
+                        className="mt-4 text-sm text-gray-500 cursor-pointer hover:text-gray-700"
                       >
                         Forgot your password? It happens.
                       </p>

@@ -1,3 +1,4 @@
+import { useState } from "react";
 // Firebase
 import { db } from "../../lib/firebase";
 import {
@@ -11,8 +12,10 @@ import {
 import { loadStripe } from "@stripe/stripe-js";
 
 const SendToCheckout = ({ user }) => {
+  const [loading, setLoading] = useState(false);
   // Open Checkout Session
   const sendToCheckout = async () => {
+    setLoading(true);
     try {
       const authUserDocument = await doc(db, "users", user.uid);
       getDoc(authUserDocument)
@@ -49,9 +52,16 @@ const SendToCheckout = ({ user }) => {
       console.log(err);
     }
   };
-  return (
-    <button className="bg-white btn-outline" onClick={sendToCheckout}>
-      SendToCheckout
+  return loading ? (
+    <button className="w-full py-4 bg-gray-100 btn-outline" disabled>
+      loading...
+    </button>
+  ) : (
+    <button
+      className="w-full py-4 text-orange-500 bg-orange-100 btn-blue"
+      onClick={sendToCheckout}
+    >
+      Purchase
     </button>
   );
 };

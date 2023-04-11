@@ -1,12 +1,12 @@
 import "./globals.css";
 import { AuthContextProvider } from "../context/AuthContext";
-
 // Componetns
 import Nav from "../components/Nav";
 
 export const metadata = {
-  title: "Paywall Subscription",
-  description: "A simple Paywall Subscription with authentication",
+  title: "Supersaas - Race to MVP",
+  description:
+    "A collection of boilerplates to fasttrack your next Saas project",
 };
 
 export default function RootLayout({ children }) {

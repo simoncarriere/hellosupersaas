@@ -74,7 +74,7 @@ const ForgetPassword = ({ showForgetPassword, setShowForgetPassword }) => {
         <Transition.Root show={showForgetPassword} as={Fragment}>
           <Dialog
             as="div"
-            className="relative z-10"
+            className="relative z-20 isolate"
             onClose={() => setShowForgetPassword(false)}
           >
             <Transition.Child

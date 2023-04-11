@@ -12,21 +12,33 @@
   h2 {
     @apply text-xl text-gray-800;
   }
+  button {
+    @apply hover:-translate-y-0.5 transition-all duration-100 ease-in-out;
+  }
 }
 
 @layer components {
+  .icon {
+    @apply w-6 h-6 rounded-full bg-gray-100 mr-3 object-contain;
+  }
+  .card {
+    @apply hover:-translate-y-1.5 duration-500 transition-all;
+  }
   .btn-light {
     @apply cursor-pointer inline-block bg-slate-100 py-2 px-4 border border-transparent rounded-md text-base font-medium text-slate-600 hover:bg-slate-200;
   }
   .btn-outline {
-    @apply inline-block border border-slate-200 py-2 px-4 rounded-md text-base font-medium text-slate-800 hover:bg-slate-50;
+    @apply inline-block border border-slate-100 py-2 px-4 rounded-md text-base font-medium text-slate-800 hover:bg-slate-50;
   }
 
   .btn-blue {
-    @apply cursor-pointer inline-block bg-blue-100 py-3 px-4 border border-transparent rounded-md text-base font-semibold tracking-wide text-blue-700 hover:bg-blue-50;
+    @apply cursor-pointer inline-block bg-orange-50 border border-orange-100 py-3 px-4 rounded-md text-base font-semibold tracking-wide text-orange-600 hover:bg-orange-100;
   }
   .btn-social-login {
     @apply cursor-pointer w-full inline-flex justify-center py-2 px-4 border border-slate-100  rounded-md shadow-sm bg-slate-50  text-sm font-medium text-slate-500  hover:bg-slate-100;
+  }
+  .tag-gray {
+    @apply flex items-center w-full  justify-center gap-2 py-4 transition duration-200 rounded-md cursor-pointer xl:px-3 xl:py-2 xl:text-sm bg-slate-50 hover:text-orange-600 hover:bg-orange-100;
   }
 
   .input-field {
@@ -39,8 +51,8 @@
       border-slate-200 
       placeholder-slate-400 
       text-slate-900 
-      focus:ring-indigo-500 
-      focus:border-indigo-500 
+      focus:ring-orange-500 
+      focus:border-orange-500 
       invalid:border-red-300 
       invalid:text-red-900 
       invalid:placeholder-red-300  
@@ -50,5 +62,8 @@
 
   .error-message {
     @apply text-sm text-red-600;
+  }
+  .link {
+    @apply text-sm text-slate-400 hover:text-slate-800 hover:bg-slate-100 p-2 rounded-md transition duration-200;
   }
 }

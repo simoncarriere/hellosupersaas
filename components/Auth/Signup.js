@@ -109,7 +109,7 @@ const Signup = ({ btnText }) => {
         <Transition.Root show={showModal} as={Fragment}>
           <Dialog
             as="div"
-            className="relative z-10"
+            className="relative z-20 isolate"
             initialFocus={emailRef}
             onClose={() => setShowModal(false)}
           >
@@ -136,15 +136,15 @@ const Signup = ({ btnText }) => {
                   leaveFrom="opacity-100 translate-y-0 sm:scale-100"
                   leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
                 >
-                  <Dialog.Panel className="w-full max-w-lg bg-white rounded-lg">
+                  <Dialog.Panel className="w-full max-w-2xl bg-white rounded-lg">
                     <form
                       autoComplete="off"
-                      className="flex flex-col gap-2 p-6"
+                      className="flex flex-col gap-2 p-8"
                       onSubmit={handleEmailAuth}
                     >
                       {/* Title */}
                       <Dialog.Title as="h1" className="mb-4 text-2xl">
-                        Sign Up
+                        Create an account and get instant access!
                       </Dialog.Title>
 
                       {/* Social Logins */}
@@ -217,7 +217,7 @@ const Signup = ({ btnText }) => {
                             type="submit"
                             className="w-full py-4 btn-blue"
                           >
-                            Create your account
+                            Continue
                           </button>
                         ) : (
                           <button

@@ -7,6 +7,7 @@ import { Dialog, Transition } from "@headlessui/react";
 import { useAuthContext } from "../../hooks/useAuthContext";
 // Firebase
 import { deleteUser, updatePassword } from "firebase/auth";
+import { getFunctions, httpsCallable } from "firebase/functions";
 // Components
 import FormInput from "../Atoms/FormInput";
 import Success from "../Atoms/SuccessAlert";
@@ -153,7 +154,7 @@ const AccountSettings = ({ showAccountSettings, setShowAccountSettings }) => {
         <Transition.Root show={showAccountSettings} as={Fragment}>
           <Dialog
             as="div"
-            className="relative z-10"
+            className="relative z-20 isolate"
             // initialFocus={emailRef}
             onClose={() => setShowAccountSettings(false)}
           >
