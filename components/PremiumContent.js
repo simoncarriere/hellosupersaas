@@ -207,7 +207,7 @@ const PremiumContent = () => {
               </h2>
               <p className="text-gray-400">
                 Help us prioritize our roadmap by voting on what boilerplate
-                you'd like to see us build next.
+                you&apos;d like to see us build next.
               </p>
               <div className="flex items-center ">
                 <p className="text-sm text-gray-600">Get in touch</p>
