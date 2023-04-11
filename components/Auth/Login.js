@@ -113,7 +113,7 @@ const Login = ({ btnText, setShowForgetPassword }) => {
                       onSubmit={handleEmailAuth}
                     >
                       <Dialog.Title as="h1" className="mb-4 text-2xl">
-                        Let's get you back in!
+                        Let&apos;s get you back in!
                       </Dialog.Title>
                       {/* Social Logins */}
                       <SocialLogins

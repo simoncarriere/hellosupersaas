@@ -1,8 +1,10 @@
-# Auth-SPA
+# (HelloSuperSaas.com)[http://hellosupersaas.com]
 
-Auth-SPA is part of a larger collection of boilerplates built using Next13, Firebase9 & Tailwind. Access them [here](https://github.com/simoncarriere/boilerplates)
+Access our collection of boilerplates built using Next13, Firebase9 and Tailwind to fast track your next SAAS project. Built for ambitious agencies and solopreneurs who move fast.
 
 ### Disclaimers
+
+- I'm currently working on setup walkthroughs for each boilerplates
 
 - I tried to offer a balance between unopionated styling and a good starting point
 - Every boilerplate denormalizes user datat into its own firebase collection on signup.
