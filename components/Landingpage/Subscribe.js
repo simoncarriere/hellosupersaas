@@ -1,37 +1,26 @@
-import { useRef, useState } from "react";
+"use client";
+import { useState } from "react";
+import { db } from "../../lib/firebase";
+import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 
 export function Subscribe() {
-  // 1. Create a reference to the input so we can fetch/clear it's value.
-  const inputEl = useRef(null);
-  // 2. Hold a message in state to handle the response from our API.
-  const [message, setMessage] = useState("");
+  const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [email, setEmail] = useState("");
 
-  const subscribe = async (e) => {
+  const subscribe = (e) => {
     e.preventDefault();
-
-    // 3. Send a request to our API with the user's email address.
-    const res = await fetch("/api/subscribe", {
-      body: JSON.stringify({
-        email: inputEl.current.value,
-      }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-      method: "POST",
-    });
-
-    const { error } = await res.json();
-
-    if (error) {
-      // 4. If there was an error, update the message in state.
-      setMessage(error);
-
-      return;
+    const roomRef = collection(db, "subscribers");
+    try {
+      addDoc(roomRef, {
+        email: email,
+        createdAt: serverTimestamp(),
+      }).then(() => {
+        // setEmail("");
+        setSubmitSuccess(true);
+      });
+    } catch (error) {
+      console.error("Error adding document: ", error);
     }
-
-    // 5. Clear the input value and show a success message.
-    inputEl.current.value = "";
-    setMessage("Success! 🎉 You are now subscribed.");
   };
 
   return (
@@ -41,24 +30,24 @@ export function Subscribe() {
           Email address
         </label>
         <input
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
           id="email-input"
           name="email"
           placeholder="steve@apple.com"
-          ref={inputEl}
           required
           type="email"
           autoComplete="email"
           className="block px-5 py-4 text-gray-900 border-0 rounded-md shadow-sm w-96 pr-14 ring-1 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-orange-400 sm:text-sm sm:leading-6"
-
           // className="flex-auto min-w-0 px-5 py-4 border-gray-100 rounded-md shadow-sm w-96 focus:ring-orange-500 outline-orange-500 sm:text-sm sm:leading-6"
         />
-        {message === "Success! 🎉 You are now subscribed." ? (
-          <button
+        {submitSuccess ? (
+          <p
             type="disabled"
-            className="ml-2 bg-orange-200 cursor-default hover:bg-orange-200"
+            className="absolute inset-y-0 right-0 flex items-center px-3 m-2 text-xs font-medium text-orange-300 rounded-md cursor-default"
           >
-            You&apos;re in!
-          </button>
+            Success! 🎉
+          </p>
         ) : (
           <button
             type="submit"
@@ -85,7 +74,6 @@ export function Subscribe() {
         <p className="ml-2 text-sm text-gray-400 mt-7">
           Get notified with updates
         </p>
-        <p className="mt-3 text-orange-300">{message ? message : ""}</p>
       </div>
     </form>
   );

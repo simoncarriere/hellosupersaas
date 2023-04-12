@@ -1,5 +1,5 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Inter } from "next/font/google";
 // Hooks
 import { useAuthContext } from "../hooks/useAuthContext";
@@ -27,6 +27,9 @@ export default function Home() {
     checkForPremium();
   }, [user, checkForPremium]);
 
+  // Toggle SignUp Modal
+  // const [showSignupModal, setShowSignupModal] = useState(false);
+
   return (
     authIsReady && (
       <div className="flex flex-col gap-4 px-6 mx-auto rounded-md pt-28">
@@ -50,9 +53,15 @@ export default function Home() {
             </>
           ) : (
             <>
-              <Header />
+              <Header
+              // showSignupModal={showSignupModal}
+              // setShowSignupModal={setShowSignupModal}
+              />
               <Features />
-              <Pricing />
+              <Pricing
+              // showSignupModal={showSignupModal}
+              // setShowSignupModal={setShowSignupModal}
+              />
             </>
           )}
         </div>

@@ -5,7 +5,7 @@ import { useAuthContext } from "../hooks/useAuthContext";
 // Firebase Imports
 import { auth, db } from "../lib/firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { setDoc, doc, addDoc, collection } from "firebase/firestore";
+import { setDoc, doc, collection } from "firebase/firestore";
 
 export const useSignup = () => {
   const { dispatch } = useAuthContext();

@@ -23,25 +23,22 @@ const Nav = () => {
         {!user && (
           <div className="flex items-center gap-x-6 bg-neutral-800 hover:bg-neutral-900 py-4 px-6 sm:px-3.5 justify-center ">
             <p className="text-sm leading-6 text-gray-300">
-              <a href="#">
-                <strong className="font-semibold text-gray-100">
-                  🚀 Early Access Promo
-                </strong>
-                <svg
-                  viewBox="0 0 2 2"
-                  className="mx-2 inline h-0.5 w-0.5 fill-current"
-                  aria-hidden="true"
-                >
-                  <circle cx={1} cy={1} r={1} />
-                </svg>
-                Be one of the first hundred to join and get 50% off&nbsp;using
-                code:{" "}
-                <span className="font-bold text-orange-200">FIRST100</span>
-                {/* But we&apos;re excited to show you what we&apos;ve built so far. */}
-                <span aria-hidden="true" className="ml-2">
+              <strong className="font-semibold text-gray-100">
+                🚀 Early Access Promo
+              </strong>
+              <svg
+                viewBox="0 0 2 2"
+                className="mx-2 inline h-0.5 w-0.5 fill-current"
+                aria-hidden="true"
+              >
+                <circle cx={1} cy={1} r={1} />
+              </svg>
+              Be one of the first hundred to join and grab it for $100/year
+              {/* <span className="pl-2 font-bold text-orange-200">FIRST100</span> */}
+              {/* But we&apos;re excited to show you what we&apos;ve built so far. */}
+              {/* <span aria-hidden="true" className="ml-2">
                   &rarr;
-                </span>
-              </a>
+                </span> */}
             </p>
           </div>
         )}
@@ -82,7 +79,7 @@ const Nav = () => {
                 btnText="Login"
                 setShowForgetPassword={setShowForgetPassword}
               />
-              <Signup btnText="Start Building" />
+              <Signup btnText="Start Building" primaryBtn={false} />
               {showForgetPassword && (
                 <ForgetPassword
                   showForgetPassword={showForgetPassword}

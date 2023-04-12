@@ -55,8 +55,8 @@ const features = [
   {
     title: "Let them work together",
     desc: "Users have the ability to create teams, gain access to shared rooms, and collaborate on data",
-    imageUrl:
-      "https://res.cloudinary.com/amie/video/upload/v1647368101/website/card-profile_s3tjyr.mp4",
+    imageUrl: "/collaborate.png",
+    // "https://res.cloudinary.com/amie/video/upload/v1647368101/website/card-profile_s3tjyr.mp4",
     icons: [
       {
         active: true,
@@ -81,8 +81,8 @@ const features = [
   {
     title: "Market your product",
     desc: "Begin publishing blog articles from day one, optimized for social sharing and SEO ready",
-    imageUrl:
-      "https://res.cloudinary.com/amie/video/upload/v1647368102/website/card-share-slots_kiuaad.mp4",
+    imageUrl: "/blog.png",
+    // "https://res.cloudinary.com/amie/video/upload/v1647368102/website/card-share-slots_kiuaad.mp4",
     icons: [
       {
         active: true,
@@ -101,8 +101,8 @@ const features = [
   {
     title: "Realtime (Coming Soon)",
     desc: "The web is fast becoming multiplayer, and your app should be too. ",
-    imageUrl:
-      "https://res.cloudinary.com/amie/video/upload/v1647367902/website/intro-short_o4nfbw.mp4",
+    imageUrl: "/realtime.png",
+    // "https://res.cloudinary.com/amie/video/upload/v1647367902/website/intro-short_o4nfbw.mp4",
     icons: [
       {
         active: true,
@@ -119,10 +119,9 @@ const features = [
     ],
   },
   {
-    title: "Have a feature in mind?",
+    title: "Vote on what we build next",
     desc: "Tweet your product ideas to @simonsjournal",
-    imageUrl:
-      "https://res.cloudinary.com/amie/video/upload/v1647367902/website/intro-short_o4nfbw.mp4",
+    imageUrl: "/vote.png",
   },
 ];
 
@@ -131,7 +130,7 @@ export function Features() {
     <div className="my-32">
       <div className="mx-auto 2xl:mx-8 ">
         {/* GRID */}
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 grid-rows-auto ">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 grid-rows-auto ">
           {/* Youtube */}
 
           {/* <div className="col-span-1 row-span-1 p-4 bg-gray-100 card sm:inline-block sm:w-full rounded-xl md:col-span-2 h-96 lg:h-auto">

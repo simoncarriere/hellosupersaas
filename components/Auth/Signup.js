@@ -12,7 +12,7 @@ import Error from "../Atoms/ErrorAlert";
 //Icons
 import { XCircleIcon } from "@heroicons/react/24/solid";
 
-const Signup = ({ btnText }) => {
+const Signup = ({ btnText, primaryBtn }) => {
   // Toggle Component
   const [showModal, setShowModal] = useState(false);
   // Form Values
@@ -102,7 +102,19 @@ const Signup = ({ btnText }) => {
 
   return (
     <>
-      <div onClick={() => setShowModal(true)} className="btn-blue">
+      <div
+        onClick={() => setShowModal(true)}
+        className={` flex items-center justify-center h-full 
+          ${
+            primaryBtn
+              ? "px-8  text-orange-100 transition-all duration-200 bg-orange-500 hover:bg-orange-600 hover:text-orange-200 btn-blue"
+              : "btn-blue"
+          }
+
+        `}
+        // "flex items-center justify-center w-full h-full mx-auto btn-blue"
+        // }
+      >
         {btnText}
       </div>
       {showModal && (

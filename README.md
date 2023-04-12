@@ -25,3 +25,4 @@ For any questions, feedback or feature suggestions tweet at me @simonsjournal. F
 - `usePremiumCheck` : Checks if the user has an active stripe subscription by checking its user document.
 - `useCollection`
 - `useDocument`
+  AIzaSyANcDXMEa7At5heaJbEPKTOe9fMBSsiK5k

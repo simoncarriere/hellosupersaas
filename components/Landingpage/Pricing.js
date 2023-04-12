@@ -12,6 +12,7 @@ const tiers = [
       "For the ambitious solopreneur who wants to get to market fast.",
     features: [
       "Access to all current and future boilerplates",
+      "Vote on new features",
       "Community Slack Channels",
     ],
     featured: false,
@@ -62,16 +63,16 @@ export function Pricing() {
           We&apos;re saving you days of work, it&apos;s only fair we get a
           little something in return. Not conviced?
         </h2>
-        <button className="flex items-center justify-center px-6 py-4 mx-auto btn-outline">
-          <CalendarDaysIcon className="w-5 h-5 mr-2" aria-hidden="true" />
-          <a
-            target="_blank"
-            rel="noreferrer"
-            href="https://calendly.com/simonsjournal/supersaas-demo"
-          >
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href="https://calendly.com/simonsjournal/supersaas"
+        >
+          <button className="flex items-center justify-center px-6 py-4 mx-auto btn-outline">
+            <CalendarDaysIcon className="w-5 h-5 mr-2" aria-hidden="true" />
             Schedule a demo
-          </a>
-        </button>
+          </button>
+        </a>
       </div>
       {/* Payment Plants */}
       <div className="flex mx-auto ">
@@ -97,7 +98,7 @@ export function Pricing() {
                 <p
                   className={classNames(
                     tier.featured ? "text-gray-400" : "text-gray-500",
-                    "mt-1 text-sm "
+                    "mt-2 text-sm "
                   )}
                 >
                   {tier.description}
@@ -144,7 +145,7 @@ export function Pricing() {
                 </p>
                 {tier.onClick ? (
                   <div className="w-full py-3 mt-6 ">
-                    <Signup btnText={tier.cta} className="" />
+                    <Signup btnText={tier.cta} primaryBtn={true} />
                   </div>
                 ) : (
                   <a

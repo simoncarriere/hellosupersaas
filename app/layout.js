@@ -1,6 +1,6 @@
 import "./globals.css";
 import { AuthContextProvider } from "../context/AuthContext";
-// Componetns
+// Components
 import Nav from "../components/Nav";
 
 export const metadata = {
